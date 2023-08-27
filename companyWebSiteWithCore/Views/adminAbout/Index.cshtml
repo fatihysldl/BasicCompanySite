@@ -1,0 +1,31 @@
+﻿@using entityLayer.concrete
+@model List<about>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Admin About</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>About Id</th>
+        <th>About Value</th>
+        <th>About Image Path</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.aboutId</td>
+                <td>@i.aboutValue</td>
+                <td>@i.aboutImagePath</td>
+                <td><a href="/adminAbout/editAbout/@i.aboutId" class="btn btn-success">Update</a></td>
+                <td><a href="/adminAbout/deleteAbout/@i.aboutId" class="btn btn-warning">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

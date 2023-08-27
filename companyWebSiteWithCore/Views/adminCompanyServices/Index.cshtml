@@ -1,0 +1,40 @@
+﻿@using entityLayer.concrete
+@model List<companyServices>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Admin Services</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>company Services Id</th>
+        <th>company Services Header</th>
+        <th>company Services Description</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.companyServicesId</td>
+                <td>@i.companyServicesHeader</td>
+                <td>@i.companyServicesDescription</td>
+                <td> <a href="/adminCompanyServices/editServices/@i.companyServicesId" class="btn btn-success">Update</a></td>
+                <td>
+                    <a href="/adminCompanyServices/deleteServices/@i.companyServicesId" class="noselect"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></a>
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/adminCompanyServices/insertServices" class="goSavePageButton">
+    Add Service
+</a>
+
+

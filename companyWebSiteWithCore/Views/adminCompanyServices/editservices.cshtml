@@ -1,0 +1,26 @@
+﻿@model entityLayer.concrete.companyServices
+@{
+    ViewData["Title"] = "editservices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Services</h1>
+
+@using (Html.BeginForm("editservices", "adminCompanyServices", FormMethod.Post))
+{
+    <div class="form-group">
+        <label> Service Header </label>
+        @Html.TextBoxFor(i=>i.companyServicesHeader, new {@class="form-control"})
+    </div>
+    <br />
+    <div class="form-group">
+        <label> Service Description </label>
+        @Html.TextBoxFor(i=>i.companyServicesDescription, new {@class="form-control"})
+    </div>
+    <br />
+    <div class="form-group">
+        <label> Image Path </label>
+        @Html.TextBoxFor(i=>i.ımagePath, new {@class="form-control"})
+    </div>
+    <button class="btn btn-success">Update</button>
+}

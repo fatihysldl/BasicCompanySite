@@ -1,0 +1,28 @@
+﻿@using entityLayer.concrete
+@model List<companyServices>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_userLayout.cshtml";
+}
+
+@foreach (var i in Model)
+{
+    <div class="container my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid" src="~/adminTemplete/img/servicesPhoto2.jpg" alt="..." /></div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <p class="card-title">@i.companyServicesHeader</p>
+                    <p class="small-desc">
+                        @i.companyServicesDescription
+                    </p>
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
